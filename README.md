@@ -13,12 +13,12 @@ Wszystkie strony tworzą sieć (klasa Network) i zadaniem jest policzenie warto�
 
 
 #### Gdzie:
-{\displaystyle P\!R_{x}={\frac {1-d}{N}}+d\left({\frac {P\!R_{y}}{L_{y}}}+{\frac {P\!R_{z}}{L_{z}}}...\right),}
-PR to wartośc PageRank danej strony
-d to współczynnik tłumienia (zwykle 0.85)
-N to liczba stron w sieci
-L to liczba linków wychodzących z danej strony
-W przypadku, gdy do strony nie ma żadnych linków wchodzących powyższa formuła jest niezdefiniowana. Istnieją liczne metody obsługi tych tzw. wiszących węzłów (ang. “dangling node”). Na potrzeby tego zadania przyjmijmy metodę wykorzystaną w popularnej bibliotece networkx (opisanej tutaj [https://www.geeksforgeeks.org/page-rank-algorithm-implementation/]): dla każdego węzła suma ilorazów wartości PR i liczby linków wychodzących jest powiększona o sumę wartości PR dla stron bez linków wychodzących podzielonej przez liczbę węzłów w sieci.
+
+- PR to wartośc PageRank danej strony
+- d to współczynnik tłumienia (zwykle 0.85)
+- N to liczba stron w sieci
+- L to liczba linków wychodzących z danej strony
+- W przypadku, gdy do strony nie ma żadnych linków wchodzących powyższa formuła jest niezdefiniowana. Istnieją liczne metody obsługi tych tzw. wiszących węzłów (ang. “dangling node”). Na potrzeby tego zadania przyjmijmy metodę wykorzystaną w popularnej bibliotece networkx (opisanej tutaj [https://www.geeksforgeeks.org/page-rank-algorithm-implementation/]): dla każdego węzła suma ilorazów wartości PR i liczby linków wychodzących jest powiększona o sumę wartości PR dla stron bez linków wychodzących podzielonej przez liczbę węzłów w sieci.
 
 Zadaniem studenta jest wyliczenie wartości PageRank metodą iteracyjną. W pierwszym kroku każda strona ma taki sam pagerank równy 1/n, gdzie n to liczba stron w sieci. W każdym następnym kroku wartość PageRank jest wyliczana w sposób zgodny z powyższym algorytmem, tak długo aż suma różnic wartości między dwoma kolejnymi krokami będzie bardzo mała (mniejsza niż parametr tolerance) lub liczba iteracji przekroczy wyznaczony limit (wtedy powinien zostać zwrócony błąd).
 
